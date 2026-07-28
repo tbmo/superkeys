@@ -1,0 +1,102 @@
+{
+    "name": "superkeys",
+    "displayName": "Superkeys",
+    "description": "Manage VS Code keybindings and create custom file views through JavaScript configuration.",
+    "version": "1.0.0",
+    "publisher": "matricks",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Other",
+        "Keymaps"
+    ],
+    "keywords": [
+        "keybindings",
+        "config",
+        "shortcuts",
+        "hotkeys",
+        "javascript",
+        "view",
+        "files",
+        "search",
+        "aggregate",
+        "dump"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tbmo/superkeys.git"
+    },
+    "main": "./extension.js",
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "superkeys.loadConfigs",
+                "title": "Load Configs",
+                "category": "Superkeys"
+            },
+            {
+                "command": "superkeys.runView",
+                "title": "Run View",
+                "category": "Superkeys"
+            },
+            {
+                "command": "superkeys.openView",
+                "title": "Open View In Workspace",
+                "category": "Superkeys"
+            },
+            {
+                "command": "superkeys.createDefaultConfigs",
+                "title": "Create Default Configs",
+                "category": "Superkeys"
+            },
+            {
+                "command": "superkeys.createTypeDefinitions",
+                "title": "Create Type Definitions",
+                "category": "Superkeys"
+            }
+        ],
+        "configuration": {
+            "title": "Superkeys",
+            "properties": {
+                "superkeys.live": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Whether to apply keybinding rules to VS Code's keybindings.json"
+                },
+                "superkeys.dryrun": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Whether to apply keybinding rules to a test file in .vscode folder"
+                },
+                "superkeys.useClipboard": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Whether to put the dump content into the clipboard instead of making a file"
+                },
+                "superkeys.viewOutputFilename": {
+                    "type": "string",
+                    "default": "__dump.txt",
+                    "description": "Default output filename for view dumps"
+                },
+                "superkeys.showPrivateViews": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Show private views in the command palette (for debugging)"
+                }
+            }
+        }
+    },
+    "dependencies": {
+        "ignore": "^5.3.2",
+        "micromatch": "^4.0.8"
+    },
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "@types/vscode": "^1.74.0"
+    }
+}

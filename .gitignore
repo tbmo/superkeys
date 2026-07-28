@@ -1,0 +1,10 @@
+node_modules/
+*.vsix
+.vscode/cache/
+package-lock.json
+*.log
+.DS_Store
+dist/
+out/
+__dump.txt
+.claude/
